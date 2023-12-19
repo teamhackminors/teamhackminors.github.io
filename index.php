@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+
+    <meta charset="utf-8">
+    <title>Feedback - SOUTH POINT HIGH SCHOOL EXHIBITION</title>
+    <link href="style.css" rel="stylesheet" type="text/css">
+    <link href="button_style.css" rel="stylesheet" type="text/css">
+</head>
+<style>
+
+    label{
+        color: white;
+    }
+    </style>
+<body>
+<div id="topHeader">
+    <img src="logo.png" height="105vh" width="125vh" style="float: left; margin-right: 10px;">
+    <span class="head"></span><br />
+    <span class="tag">YOUR FEEDBACK IS VALUABLE TO US!</span>
+</div>
+<br>
+<br>
+<br>
+<br>
+<div id="content" align="center" style="background-image: linear-gradient(to right bottom, #37054e, #32064e, #2d074e, #27074e, #21084e, #200c53, #1e0f58, #1b135d, #1c1a68, #1c2274, #1b2980, #17318c); color:white;">
+    <br>
+    <br>
+    <center
+            <span class="SubHead" style="font-weight:900; font-size:30px; color: #384ef0;">Feedback
+                <br>
+                <br>
+<div class="center">
+         <div class="outer button" style="width:500px; border-radius: 8px;">
+            <button class="button" onclick="window.location.href='feedback.php'" style="width:380px; border-radius:8px"><b>CLICK HERE TO GIVE YOUR FEEDBACK</b></button>
+            <span></span>
+            <span></span>
+         </div>
+      </div>
+            </span>
+    </center>
+</div>
+<script src="typing.js"></script>
+<script>
+    var typed = new Typed(".head", {
+        strings: ["Welcome to the Platinum Exhibition of...", "SOUTH POINT SCHOOL", "SOUTH POINT HIGH SCHOOL"],
+        typeSpeed: 70,
+        backSpeed: 30,
+        loop: true
+    })
+</script>
+</body>
+</html>
