@@ -1,1 +1,0 @@
-# teamhackminors.github.io
