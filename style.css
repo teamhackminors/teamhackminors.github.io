@@ -378,12 +378,14 @@
     .fade-in-image-2 {
       opacity: 0; /* Initially hidden */
       transition: opacity 5s ease-in-out; /* Smooth transition */
-      max-width: 28.64583333333vw; /* Set maximum width */
-      height: 28.64583333333vw; /* Maintain aspect ratio */
+      max-width: 23.64583333333vw; /* Set maximum width */
+      height: 23.64583333333vw; /* Maintain aspect ratio */
       justify-content: center;
       position: relative;
-      right: 2.083333333333vw;
-      top: 46.875vw;
+      right: 38.083333333333vw;
+      top: 35.875vw;
+      border: 0.26041666666vw solid #14ad14; /* Dark green border */
+      border-radius: 10px;
     }
 
     .fade-in-image-3 {
