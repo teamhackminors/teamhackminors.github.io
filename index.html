@@ -5,486 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Carbon Manager - Hackminors</title>
   <link rel="icon" href="logo.png" type="image/x-icon">
-  <style>
-    /* CSS Styles */
-
-    /* Styles for custom scrollbar */
-    ::-webkit-scrollbar {
-      width: 0.5208333333vw; /* width of the scrollbar */
-    }
-    ::-webkit-scrollbar-track {
-      background: #333; /* color of the track */
-    }
-    ::-webkit-scrollbar-thumb {
-      background: #003312; /* color of the scrollbar */
-    }
-    ::-webkit-scrollbar-thumb:hover {
-      background: #005a1e; /* color of the scrollbar on hover */
-    }
-
-
-    body {
-      font-family: 'Arial', sans-serif;
-      margin: 0;
-      padding: 0.5208333333vw;
-      color: #004115;
-      background-size: 100% 100%;
-      background-attachment: fixed;
-      background-position: center;
-      overflow-x: hidden;
-      
-    }
-
-    header {  
-      color: #fff;
-      padding: 1.041666666vw;
-      text-align: center;
-      font-size: 1.875vw;
-      font-weight: bold;
-      width: 100%;
-    }
-
-    .glow { 
-      font-size: 4.16777777vw;
-      text-align: center;
-      color: rgb(255, 242, 0); /* Yellow */
-      text-align: center;
-      animation: glow 1s ease-in-out infinite alternate;
-      margin-top: 1.04166666vw; /* Added to create space between header and h1 */
-      font-family: 'dangernight', sans-serif; /* Changed font */
-      font-weight: bolder;
-      position: relative; /* Add position relative */
-  z-index: 1; /* Set a higher z-index to bring it to the front */
-    }
-
-    @keyframes glow {
-      from {
-        text-shadow: 0 0 10px #000000, 0 0 20px #fff, 0 0 30px #004004, 0 0 40px #126c00, 0 0 50px #005f03, 0 0 60px #0e501a, 0 0 70px #007b00;
-      }
-      to {
-        text-shadow: 0 0 20px #fff, 0 0 30px #008700, 0 0 40px #009e2f, 0 0 50px #008e09, 0 0 60px #009714, 0 0 70px #009205, 0 0 80px #04a314;
-      }
-    }
-
-    main {
-      padding: 1.041666666vw;
-      display: flex;
-      flex-wrap: wrap;
-      border-radius: 2.6041666666vw;
-      text-align: left;
-      border: 0.260416666666vw solid #004e00; /* Dark green border */
-      margin: 0.520833333vw; /* Added margin */
-      max-width: 70%;
-      background: linear-gradient(to right, rgba(0,0,0,1) 0%, rgba(0,33,5,1) 10%, rgba(0,48,7,1) 20%, rgba(0,62,9,1) 30%, rgba(0,80,10,1) 40%, rgba(0,79,12,1) 50%, rgba(0,92,16,1) 60%, rgba(0,79,13,1) 70%, rgba(0,80,14,1) 80%, rgba(0,83,13,1) 90%, rgba(0,88,14,1) 100%);
-      opacity: 0.1;
-      position: relative;
-      animation: rainbowBorder 6s linear infinite; /* Apply the animation */
-      z-index: 1;
-    }
-
-    @keyframes rainbowBorder {
-      0% {
-        border-color: #4CAF50; /* Green */
-      }
-      4.166% {
-        border-color: #5FBF63; /* Light Green */
-      }
-      8.333% {
-        border-color: #66BB6A; /* Light Green */
-      }
-      12.5% {
-        border-color: #74C277; /* Greenish Cyan */
-      }
-      16.666% {
-        border-color: #81C784; /* Lighter Green */
-      }
-      20.833% {
-        border-color: #90CC8D; /* Greenish Turquoise */
-      }
-      25% {
-        border-color: #9ED19A; /* Darker Turquoise */
-      }
-      29.166% {
-        border-color: #A5D6A7; /* Lightest Green */
-      }
-      33.333% {
-        border-color: #B3DAB4; /* Turquoise */
-      }
-      37.5% {
-        border-color: #C5E1A5; /* Lime Green */
-      }
-      41.666% {
-        border-color: #CFE7AB; /* Lime Yellow */
-      }
-      45.833% {
-        border-color: #DDEEBC; /* Lighter Lime */
-      }
-      50% {
-        border-color: #E6EE9C; /* Yellow Green */
-      }
-      54.166% {
-        border-color: #F1F39F; /* Yellow Green */
-      }
-      58.333% {
-        border-color: #FFF590; /* Light Yellow */
-      }
-      62.5% {
-        border-color: #FFFF8D; /* Light Yellow */
-      }
-      66.666% {
-        border-color: #FFFD82; /* Light Yellow */
-      }
-      70.833% {
-        border-color: #FFFD82; /* Light Yellow */
-      }
-      75% {
-        border-color: #FFFFA5; /* Light Yellow */
-      }
-      79.166% {
-        border-color: #FFF590; /* Light Yellow */
-      }
-      83.333% {
-        border-color: #F1F39F; /* Yellow Green */
-      }
-      87.5% {
-        border-color: #d1ee9c; /* Yellow Green */
-      }
-      91.666% {
-        border-color: #aef392; /* Lighter Lime */
-      }
-      95.833% {
-        border-color: #89e64b; /* Lime Yellow */
-      }
-      100% {
-        border-color: #4CAF50; /* Green (loop back) */
-      }
-    }
-
-    section {
-      position: relative;
-      background: radial-gradient(ellipse at center, rgba(240,205,65,0.8) 0%, rgba(240,205,65,0.5) 50%, rgba(255,255,255,0) 100%), repeating-linear-gradient(45deg, #ffdb58 0px, #ffdb58 25px, #ffd27f 25px, #ffd27f 50px);
-      border-radius: 2.60416666666vw;
-      box-shadow: 0 0 0.52083333333pvw rgba(0, 0, 0, 0.1);
-      padding: 1.041666666666vw;
-      margin-bottom: 1.041666666666vw;
-      max-width: 50%;
-      text-align: left;
-      border: 0.26041666666vw solid #14ad14; /* Dark green border */
-      margin: 0.5208333333vw; /* Added margin */
-      animation-duration: 7s; /* Set the animation duration */
-      animation-fill-mode: forwards; /* Keep the final state of animation */
-      font-weight: bold;
-      
-
-    }
-
-    @keyframes rainbowBorder {
-      0% {
-        border-color: #4CAF50; /* Green */
-      }
-      4.166% {
-        border-color: #5FBF63; /* Light Green */
-      }
-      8.333% {
-        border-color: #66BB6A; /* Light Green */
-      }
-      12.5% {
-        border-color: #74C277; /* Greenish Cyan */
-      }
-      16.666% {
-        border-color: #81C784; /* Lighter Green */
-      }
-      20.833% {
-        border-color: #90CC8D; /* Greenish Turquoise */
-      }
-      25% {
-        border-color: #9ED19A; /* Darker Turquoise */
-      }
-      29.166% {
-        border-color: #A5D6A7; /* Lightest Green */
-      }
-      33.333% {
-        border-color: #B3DAB4; /* Turquoise */
-      }
-      37.5% {
-        border-color: #C5E1A5; /* Lime Green */
-      }
-      41.666% {
-        border-color: #CFE7AB; /* Lime Yellow */
-      }
-      45.833% {
-        border-color: #DDEEBC; /* Lighter Lime */
-      }
-      50% {
-        border-color: #E6EE9C; /* Yellow Green */
-      }
-      54.166% {
-        border-color: #F1F39F; /* Yellow Green */
-      }
-      58.333% {
-        border-color: #FFF590; /* Light Yellow */
-      }
-      62.5% {
-        border-color: #FFFF8D; /* Light Yellow */
-      }
-      66.666% {
-        border-color: #FFFD82; /* Light Yellow */
-      }
-      70.833% {
-        border-color: #FFFD82; /* Light Yellow */
-      }
-      75% {
-        border-color: #FFFFA5; /* Light Yellow */
-      }
-      79.166% {
-        border-color: #FFF590; /* Light Yellow */
-      }
-      83.333% {
-        border-color: #F1F39F; /* Yellow Green */
-      }
-      87.5% {
-        border-color: #d1ee9c; /* Yellow Green */
-      }
-      91.666% {
-        border-color: #aef392; /* Lighter Lime */
-      }
-      95.833% {
-        border-color: #89e64b; /* Lime Yellow */
-      }
-      100% {
-        border-color: #4CAF50; /* Green (loop back) */
-      }
-    }
-
-
-    #home {
-      animation-name: swipeOutLeft; /* Apply swipe-out animation to home section */
-    }
-
-    #about {
-      animation-name: swipeOutRight; /* Apply swipe-out animation to about section */
-    }
-
-    #techniques {
-      animation-name: swipeOutLeft; /* Apply swipe-out animation to techniques section */
-    }
-
-    #conclusion {
-      animation-name: swipeOutRight; /* Apply swipe-out animation to conclusion section */
-    }
-
-    @keyframes swipeOutLeft {
-      from {
-        transform: translateX(75%);
-      }
-      to {
-        transform: translateX(-2%);
-      }
-    }
-
-    @keyframes swipeOutRight {
-      from {
-        transform: translateX(0%);
-      }
-      to {
-        transform: translateX(80%);
-      }
-    }
-
-    h2 {
-      color: rgb(0, 99, 25);
-      text-shadow: 0.15625vw 0.15625vw 0.3125vw rgba(0, 0, 0, 0.5);
-      font-size: 2.60416666666vw;
-      margin-bottom: 1.04166666666vw;
-      font-family: 'coffeehealing', sans-serif; /* Changed font */
-      font-weight: bold;
-    }
-
-    h3{
-      color: rgb(0, 99, 25);
-      text-shadow: 0.15625vw 0.15625vw 0.3125vw rgba(0, 0, 0, 0.5);
-      font-size: 2.083333333333vw;
-      margin-bottom: 1.041666666666vw;
-      font-family: 'coffeehealing', sans-serif; /* Changed font */
-      font-weight: bold;
-
-    }
-
-    p {
-      font-size: 1.5625vw; /* Increased font size */
-      line-height: 1.6; /* Increased line height for better readability */
-    }
-
-    footer {
-      color: #fff;
-      text-align: center;
-      padding: 1.04166666666vw;
-      font-size: 1.041666666666vw;
-      font-weight: bold;
-      text-shadow: 0.10416666666vw 0.104166666666vw 0.208333333333vw rgba(0, 0, 0, 0.5);
-      width: 100%; /* Added to make the footer full width */
-      z-index: 1;
-    }
-
+  <script defer src="app.js"></script>
+  <link rel="stylesheet" href="style.css">
   
-    @font-face {
-      font-family: 'Doctor Glitch';
-      src: url('coffeehealing.ttf');
-      font-weight: normal;
-      font-style: normal;
-    }
-
-    @font-face {
-      font-family: 'dangernight';
-      src: url('dangernight.otf');
-      font-weight: normal;
-      font-style: normal;
-    }
-
-    @font-face {
-      font-family: 'nightpumpkind';
-      src: url('nightpumpkind.ttf');
-      font-weight: normal;
-      font-style: normal;
-    }
-
-    dt {
-      font-family: 'coffeehealing', sans-serif;
-      font-size: 1.822916666666vw;
-      border: rgb(111, 32, 148);
-      text-shadow: 0.104166666666vw 0.104166666666vw rgb(111, 32, 148);
-    }
-
-    @font-face {
-      font-family: 'coffeehealing';
-      src: url('coffeehealing.ttf');
-      font-weight: normal;
-      font-style: normal;
-    }
-
-    body, dl, dd {
-      font-family: 'nightpumpkind', sans-serif;
-    }
-
-    .home, .techniques {
-      margin-left: auto; /* Align to the right */
-    }
-
-    .fade-in-image-1 {
-      opacity: 0; /* Initially hidden */
-      transition: opacity 5s ease-in-out; /* Smooth transition */
-      max-width: 28.6458333333vw; /* Set maximum width */
-      height: 28.64583333333vw; /* Maintain aspect ratio */
-      justify-content: center;
-      position: relative;
-      right: 2.0833333333vw;
-      top: 13.0208333333333333vw;
-    }
-
-    .fade-in-image-2 {
-      opacity: 0; /* Initially hidden */
-      transition: opacity 5s ease-in-out; /* Smooth transition */
-      max-width: 28.64583333333vw; /* Set maximum width */
-      height: 28.645833333333vw; /* Maintain aspect ratio */
-      justify-content: center;
-      position: relative;
-      right: 37.4583333333vw;
-      top: 15.625vw;
-    }
-    .fade-in-image-3 {
-      opacity: 0; /* Initially hidden */
-      transition: opacity 5s ease-in-out; /* Smooth transition */
-      max-width: 28.64583333333vw; /* Set maximum width */
-      height: 28.64583333333vw; /* Maintain aspect ratio */
-      justify-content: center;
-      position: relative;
-      right: 2.083333333333vw;
-      top: 46.875vw;
-    }
-    .fade-in-image-4 {
-      opacity: 0; /* Initially hidden */
-      transition: opacity 5s ease-in-out; /* Smooth transition */
-      max-width: 28.6458333333vw; /* Set maximum width */
-      height: 28.6458333333vw; /* Maintain aspect ratio */
-      justify-content: center;
-      position: relative;
-      right: 36.458333333333vw;
-      top: 20.83333333333vw;
-    }
-
-
-    .show {
-      opacity: 1; /* Show when class is applied */
-    }
-
-
-    body,
-html{
-      margin: 0;
-      padding: 0;
-      height: 100%;
-}
-
-/* Hide scrollbar for Chrome, Safari and Opera */
-body::-webkit-scrollbar {
-  display: none;
-}
-
-/* Hide scrollbar for IE, Edge and Firefox */
-body {
-  -ms-overflow-style: none;  /* IE and Edge */
-  scrollbar-width: none;  /* Firefox */
-}
-
-svg {
-      display: block;
-      width: 100%;
-      height: 100vh;
-      position: fixed;
-      top: 0;
-      left: 0;
-}
-  
-.scrollElement {
-      position: absolute;
-      height: 312.5vw;
-      width: 5.20833333333vw;
-      top: 0;
-      z-index: 0;
-}
-
-  .btn {
-      position: fixed;
-      bottom: 5%;
-      right: 0px;
-      transform: translateX(82.2916666666vw);
-      border: 2px solid rgb(255, 255, 255);
-      border-radius: 0.5208333333vw;
-      font-size: 0.9rem;
-      padding: 0.5rem 0.7em;
-      background-color: transparent;  
-      color: #ffffff;
-      font-family: Verdana, Geneva, Tahoma, sans-serif;
-      -webkit-font-smoothing: antialiased;
-      cursor: pointer;
-      transition: all .3s;
-      z-index: 11;
-      font-weight: bold;
-  }
-
-  .btn_works {
-      left: 5.72916666666vw;
-      right: unset;
-      text-decoration: none;
-  }
-
-  .btn:hover {
-      background: #185512;
-      color: #1B1734;
-  }
-    
-
-  </style>
 </head>
 <body onclick="myAmbiance()">
 
@@ -500,21 +23,21 @@ svg {
   </header>
   <center>
     <main style="opacity: 0.7;">
-      <section id="home" class="home">
+      <section id="home" >
         <h2 id="home">Home</h2>
         <h3>Welcome to our project Carbon Manager- A Unique Solution to Global Warming using AI!</h3>
 <p>In the expansive domain of digital infrastructure, a beacon of hope emerges amidst the vast expanse—a beacon guiding us towards a sustainable future. Our project, Carbon Manager- A Unique Solution to Global Warming using AI, stands as a pioneering force, equipped to combat the imminent threat of climate change, Global Warming through innovative technological solutions.</p>
 <p>We pride ourselves on presenting to you an innovative, highly-accurate and user-friendly solution to track, analyze, and mitigate carbon emissions caused by individuals using Artificial Intelligence. Our system is built upon a foundation of meticulously curated data and advanced algorithmic techniques, ensuring the highest standards of accuracy and reliability. Whether you're an individual seeking to reduce your environmental impact or an organization striving for sustainability, our platform offers actionable insights and solutions to meet your carbon management needs.</p>
       </section>
-      <img src="download (2).png" class="fade-in-image-1" style="float: right;">
-      <section id="about" class="about">
+      <iframe class="iframe" width="100%" src="https://www.youtube.com/embed/sFoW5OhwkWQ?si=MBB2aiRR_5x7RtFw" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen style="float: right;"></iframe>
+      <section id="about">
         <h2>About</h2>
         <p>What do you think is the world’s greatest awaiting threat for all forms of living beings? Yes! It is none other than Global Warming caused due to Greenhouse gases like Carbon, which trap the heat in the Earth's Atmosphere, which in turn leads to rising temperatures, which exacerbate extreme weather events, disrupt ecosystems in the forms of forestfires, habitat change, etc., and threaten food and water security, ultimately endangering human health and livelihoods worldwide. Infact some Climate Researchers claim that the drastic rise in water level due to melting of glaciers is also an effect of Global Warming. So we being responsible citizens, must come forward to protect our clean and green Mother Earth.</p>
 <p>As the name suggests, our project aims to reduce Global Warming by proper management of Carbon, which is the most essential job which we can do in this realm to acheive our goal. And therefore the primary thing is to understand it's impact by being aware of the harm that we do, we need to know our Carbon Footprint, which is the total amount of greenhouse gases (including carbon dioxide and methane) that are generated by our actions. Thus due to its utmost importance, globally researchers and scientists are working on softwares to calculate the Carbon Footprint of individuals and organisations. Our project, apart from being a breakthrough in this race, is also a depiction of the power of Artificial Intelligence and how it can be applied to solve real-world problems which need such critical intervention. Not only that, there are several other amazing	cool and interesting features in our project which makes it unique and "the" best. Let's explore them one by one below...</p>
 
       </section>
-      <img src="download.png" class="fade-in-image-2" style="float: left;">
-      <section id="techniques" class="techniques">
+      <img src="" class="fade-in-image-2" style="float: left;">
+      <section id="techniques" >
         <h2>Feature Introduction:</h2>
         <h3><a href="https://carbonmanager.streamlit.app">AI Carbon Footprint Manager 🔗</a></h3>
 <p>It is perhaps world's first ever, <u>most accurate</u>, <u>most user-friendly</u>, <u>AI-powered platform</u> designed to empower individuals to <u>calculate</u>, <u>understand</u> and <u>reduce their own carbon footprints</u> through <u>answering just a few of questions regarding their day to day activities, which even a 5+ child can use</u>.</p>
@@ -526,13 +49,13 @@ svg {
 <br><br>
 <p>Those of you who are enthusiastic in knowing about the techniques and procedures used in the project are requested to <a href="">[Click Here]</a> OR <a href="mailto:teamhackminors@gmail.com">mail us</a>.</p>
       </section>
-      <img src="download (1).png" class="fade-in-image-3" style="float: right;">
-      <section id="conclusion" class="conclusion">
+      <img src="3.jpg" class="fade-in-image-3" style="float: right;">
+      <section id="conclusion" >
         <h2>Conclusion</h2>
         <p>In the annals of history, let Carbon Manager be recognized as a testament to human innovation and resilience. Conceived and developed by the esteemed <u>Team Hackminors</u> under the leadership of visionaries <u>Sagnik Chakraborty, Hrishikesh Saha, and Purbayon Sarkar</u>, students of <u>South Point High School, Kolkata</u>, it stands as a monument to collective determination.</p>
 <p>We invite you to join us in the forefront of this change. Together, let us pave the way towards a sustainable future, reclaiming our destiny from the brink of environmental degradation. The world beckons, and Carbon Manager awaits your participation in this crucial endeavor. As we navigate the complexities of climate change, our collective efforts are crucial in shaping a more sustainable future. Together, we can leverage technology and collaboration to drive positive change and build a world where environmental stewardship is paramount. Join us in our journey towards a cleaner, greener and safer planet, where every action counts towards a brighter tomorrow.</p>
       </section>
-      <img src="images.png" class="fade-in-image-4" style="float: left;">
+      <img src="4.png" class="fade-in-image-4" style="float: left;">
     </main>
   </center>
   
@@ -1130,12 +653,31 @@ fsEnter.addEventListener('click', function (e) {
     }
 });
 
+
+const controller = new ScrollMagic.Controller();
+
+const parallaxScene = new ScrollMagic.Scene({
+  triggerElement: '.trigger-element',
+  duration: 200,  /* Adjust duration as needed */
+})
+.setTween(new ScrollMagic.TweenMax.to('.parallax-element', 1, {y: '100px'}))  /* Adjust y-axis translation and duration */
+.addTo(controller);
+
+
 </script>
 <script>
   function myAmbiance() {
     document.getElementById("audio").play();
     document.getElementById("audio").loop= true;
   }
+</script>
+<script>
+
+$(document).ready(function() {
+  $('.fade-in-image-2, .fade-in-image-3, .fade-in-image-4, .iframe').addClass('slide-in');
+});
+
+
 </script>
 <footer>
     &copy; 2024 Carbon Manager, <u>Team Hackminors</u>
