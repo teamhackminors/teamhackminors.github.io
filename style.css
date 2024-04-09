@@ -168,7 +168,7 @@
       text-align: left;
       border: 0.26041666666vw solid #14ad14; /* Dark green border */
       margin: 1.5208333333vw; /* Added margin */
-      animation-duration: 7s; /* Set the animation duration */
+      animation-duration: 4s; /* Set the animation duration */
       animation-fill-mode: forwards; /* Keep the final state of animation */
       font-weight: bold;
 
@@ -444,7 +444,7 @@ svg {
   }
   
   .popout-1 {
-    animation: popout 1s forwards;
+    animation: popout 10s ease-in-out forwards;
     max-width: 24.6458333333vw; /* Set maximum width */
     height: 24.64583333333vw; /* Maintain aspect ratio */
     justify-content: center;
@@ -456,7 +456,7 @@ svg {
   }
 
   .popout-2 {
-    animation: popout 1s forwards;
+    animation: popout 1s ease-in-out forwards;
     max-width: 24.64583333333vw; /* Set maximum width */
     height: 24.64583333333vw; /* Maintain aspect ratio */
     justify-content: center;
@@ -467,7 +467,7 @@ svg {
     border-radius: 0.78125vw;
   }
   .popout-3 {
-    animation: popout 1s forwards;
+    animation: popout 1s ease-in-out forwards;
        max-width: 28.04583333333vw; /* Set maximum width */
       height: 145.645833333333vw; /* Maintain aspect ratio */
       justify-content: center;
@@ -480,7 +480,7 @@ svg {
       z-index: 0;
   }
   .popout-4 {
-    animation: popout 1s forwards;
+    animation: popout 1s ease-in-out forwards;
       width: 20.6458333333vw; /* Set maximum width */
       height: 20.6458333333vw; /* Maintain aspect ratio */
       justify-content: center;
