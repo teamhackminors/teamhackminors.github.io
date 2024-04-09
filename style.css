@@ -1,5 +1,10 @@
     /* CSS Styles */
 
+
+    html {
+      scroll-behavior:smooth;
+    }
+
     /* Styles for custom scrollbar */
     ::-webkit-scrollbar {
       width: 0.5208333333vw; /* width of the scrollbar */
@@ -250,6 +255,7 @@
 
     #home {
       animation-name: swipeOutLeft; /* Apply swipe-out animation to home section */
+      right: 3vw;
     }
 
     #about {
@@ -302,7 +308,7 @@
     }
 
     p {
-      font-size: 1.5625vw; /* Increased font size */
+      font-size: 1.0625vw; /* Increased font size */
       line-height: 1.6; /* Increased line height for better readability */
     }
 
@@ -359,59 +365,6 @@
 
     #home, #techniques {
       margin-left: auto; /* Align to the right */
-    }
-
-    .iframe {
-      opacity: 0; /* Initially hidden */
-      transition: opacity 8s ease-in-out; /* Smooth transition */
-      max-width: 28.6458333333vw; /* Set maximum width */
-      height: 28.64583333333vw; /* Maintain aspect ratio */
-      justify-content: center;
-      position: relative;
-      right: 0.0833333333vw;
-      top: 18.0208333333333333vw;
-      border-radius: 0.78125vw;
-      border: 0.26041666666vw solid #14ad14; /* Dark green border */
-    }
-
-
-    .fade-in-image-2 {
-      opacity: 0; /* Initially hidden */
-      transition: opacity 5s ease-in-out; /* Smooth transition */
-      max-width: 23.64583333333vw; /* Set maximum width */
-      height: 23.64583333333vw; /* Maintain aspect ratio */
-      justify-content: center;
-      position: relative;
-      right: 38.083333333333vw;
-      top: 35.875vw;
-      border: 0.26041666666vw solid #14ad14; /* Dark green border */
-      border-radius: 10px;
-    }
-
-    .fade-in-image-3 {
-      opacity: 0; /* Initially hidden */
-      transition: opacity 5s ease-in-out; /* Smooth transition */
-      max-width: 28.04583333333vw; /* Set maximum width */
-      height: 115.645833333333vw; /* Maintain aspect ratio */
-      justify-content: center;
-      position: relative;
-      right: 0.4583333333vw;
-      top: 100.625vw;
-      border-radius: 10px;
-      border: 0.26041666666vw solid #14ad14; /* Dark green border */
-      opacity:1;
-      z-index: 0;
-    }
-   
-    .fade-in-image-4 {
-      opacity: 0; /* Initially hidden */
-      transition: opacity 5s ease-in-out; /* Smooth transition */
-      width: 28.6458333333vw; /* Set maximum width */
-      height: 28.6458333333vw; /* Maintain aspect ratio */
-      justify-content: center;
-      position: relative;
-      right: 39.458333333333vw;
-      top: 20.83333333333vw;
     }
 
 
@@ -484,5 +437,96 @@ svg {
       background: #185512;
       color: #1B1734;
   }
+
+  @keyframes popout {
+    0% { transform: scale(0.9); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
+  }
   
-    
+  .popout-1 {
+    animation: popout 1s forwards;
+    max-width: 24.6458333333vw; /* Set maximum width */
+    height: 24.64583333333vw; /* Maintain aspect ratio */
+    justify-content: center;
+    position: relative;
+    right: 2.0833333333vw;
+    top: 9.0208333333333333vw;
+    border-radius: 0.78125vw;
+    border: 0.26041666666vw solid #14ad14; /* Dark green border */
+  }
+
+  .popout-2 {
+    animation: popout 1s forwards;
+    max-width: 24.64583333333vw; /* Set maximum width */
+    height: 24.64583333333vw; /* Maintain aspect ratio */
+    justify-content: center;
+    position: relative;
+    right: 38.083333333333vw;
+    top: 11.875vw;
+    border: 0.26041666666vw solid #14ad14; /* Dark green border */
+    border-radius: 0.78125vw;
+  }
+  .popout-3 {
+    animation: popout 1s forwards;
+       max-width: 28.04583333333vw; /* Set maximum width */
+      height: 145.645833333333vw; /* Maintain aspect ratio */
+      justify-content: center;
+      position: relative;
+      right: 0.4583333333vw;
+      top: 10.625vw;
+      border-radius: 0.78125vw;
+      border: 0.26041666666vw solid #14ad14; /* Dark green border */
+      opacity:1;
+      z-index: 0;
+  }
+  .popout-4 {
+    animation: popout 1s forwards;
+      width: 20.6458333333vw; /* Set maximum width */
+      height: 20.6458333333vw; /* Maintain aspect ratio */
+      justify-content: center;
+      position: relative;
+      right: 35.458333333333vw;
+      top: 7.83333333333vw;
+      border: 0.26041666666vw solid #14ad14; /* Dark green border */
+      border-radius: 0.78125vw;
+  }
+
+  .modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  }
+  
+  /* Modal Content */
+  .modal-content {
+    background-image: radial-gradient(circle, #4b1883, #421881, #39187f, #2f177c, #23177a, #1d187a, #161a7a, #0d1b7a, #0e1f7d, #0e2380, #0f2682, #102a85);
+    margin: auto;
+    padding: 1.041666666666vw;
+    border: 0.05208vw solid #888;
+    width: 80%;
+  }
+  
+  /* The Close Button */
+  .close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 1.458vw;
+    font-weight: bold;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+
+  
