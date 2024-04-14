@@ -34,9 +34,6 @@
   }
 </script>
 <script>
-var confirmation = confirm("The site will be plugging in its specially designed LLM (AI Chatbot), Chat2Eco at the bottom right corner of this page. Do you agree?");
-
-if (confirmation) {
     var chatDiv = document.createElement('div');
     chatDiv.id = 'botpressChat';
     document.body.appendChild(chatDiv);
@@ -51,9 +48,6 @@ if (confirmation) {
         document.body.appendChild(script2);
     };
     document.body.appendChild(script1);
-} else {
-    alert("You declined to plug in the AI Chatbot.");
-}
 </script>
 </body>
 </html>
