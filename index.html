@@ -20,7 +20,7 @@
         }
     </style>
 </head>
-<body>
+<body onclick="myAmbiance()">
     <hide>
     <audio id="audio">
         <source src="ambiance.mp3">
@@ -34,22 +34,26 @@
   }
 </script>
 <script>
-var chatDiv = document.createElement("div");
-      chatDiv.id = "botpressChat"; // Assign an ID to the div for reference
+var confirmation = confirm("The site will be plugging in its specially designed LLM (AI Chatbot), Chat2Eco at the bottom right corner of this page. Do you agree?");
 
-      // Append the chatbot div to the body of the document
-      document.body.appendChild(chatDiv);
+if (confirmation) {
+    var chatDiv = document.createElement('div');
+    chatDiv.id = 'botpressChat';
+    document.body.appendChild(chatDiv);
 
-      // Inject Botpress webchat
-      var script1 = document.createElement("script");
-      script1.src = "https://cdn.botpress.cloud/webchat/v1/inject.js";
-      document.body.appendChild(script1);
-
-      // Load Botpress configuration
-      var script2 = document.createElement("script");
-      script2.src = "https://mediafiles.botpress.cloud/c80ccde7-2db0-4ca9-99b0-14c91448ee4e/webchat/config.js";
-      script2.defer = true; // Defer loading until HTML parsing is complete
-      document.body.appendChild(script2);
+    var script1 = document.createElement('script');
+    script1.src = 'https://cdn.botpress.cloud/webchat/v1/inject.js';
+    script1.onload = function() {
+        // Once inject.js is loaded, load config.js
+        var script2 = document.createElement('script');
+        script2.src = 'https://mediafiles.botpress.cloud/c80ccde7-2db0-4ca9-99b0-14c91448ee4e/webchat/config.js';
+        script2.defer = true;
+        document.body.appendChild(script2);
+    };
+    document.body.appendChild(script1);
+} else {
+    alert("You declined to plug in the AI Chatbot.");
+}
 </script>
 </body>
 </html>
