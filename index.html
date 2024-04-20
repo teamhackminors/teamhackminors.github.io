@@ -22,18 +22,18 @@
 </head>
 <body>
     <hide>
-    <audio id="audio">
+<!--<audio id="audio">
         <source src="cry.mp3">
-    </audio>
+    </audio> -->
     </hide>
     <!--Here we implement our page within iframe to addon extra effects like the AI Chatbot plugin, ambiance, and others to our documentation. -->
     <iframe src="https://carbon-manager.vercel.app/" onload="myAmbiance()"></iframe>
-    <script>
+    <!-- <script>
   function myAmbiance() {
     document.getElementById("audio").play();
     document.getElementById("audio").loop= true;
   }
-</script>
+</script> -->
 <script>
     var chatDiv = document.createElement('div');
     chatDiv.id = 'botpressChat';
